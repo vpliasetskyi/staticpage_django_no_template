@@ -7,8 +7,7 @@ nav = """
         <a href='contact/'>Contact</a>
         <a href='/page1/'>Page 1</a> |
         <a href='/page2/'>Page 2</a> |
-        <a href='/page3/'>Page 3</a> |
-        <a href='/page4/'>Page 4</a>
+        
     </nav>
 """
 name = "John"
@@ -37,7 +36,12 @@ def home(request):
     return HttpResponse(nav + content + home_body)
 
 def contact(request):
-    return HttpResponse(nav + "Contact Us")
+    content= """
+            <h1>Contact us</h1>
+            <h2>Email:contact@gamil.com</h2>
+            <p>----------------------------</p>
+    """
+    return HttpResponse(nav + "Contact Us" + content)
 
 def p1(reqest):
     user = "John"
@@ -55,11 +59,20 @@ def p1(reqest):
 
 def p2(request):
     list1 = [1,2,100,200]
+    dict1 = {"A": 1, "B": 2, "C": 3, "D": 4, "E": 3}
     body = f"""
             <li>Item 1: {list1[0]} </li>
             <li>Item 2: {list1[1]} </li>
             <li>Item 3: {list1[2]} </li>
             <li>Item 4: {list1[3]} </li>
+
+         <ul>
+            <li>Key A: {dict1['A']}</li>
+            <li>Key B: {dict1['B']}</li>
+            <li>Key C: {dict1['C']}</li>
+            <li>Key D: {dict1['D']}</li>
+            <li>Key E: {dict1['E']}</li>
+         </ul>
         
         </ol>
     """
