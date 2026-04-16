@@ -55,13 +55,12 @@ def p1(reqest):
 
 def p2(request):
     list1 = [1,2,100,200]
-    items = f"""
+    body = f"""
             <li>Item 1: {list1[0]} </li>
             <li>Item 2: {list1[1]} </li>
             <li>Item 3: {list1[2]} </li>
             <li>Item 4: {list1[3]} </li>
-            <li>Item 5: {list1[4]} </li>
-            <li>Item 6: {list1[5]} </li>
+        
         </ol>
     """
     return HttpResponse(nav + "<h1>Page 2</h1><h2>Mixed List</h2><p>Displaying 6 elements:</p>" + body) 
@@ -71,13 +70,16 @@ def p3(request):
 
     body = f"""
         <ul>
-            <li>Key A: {data_dict['A']}</li>
-            <li>Key B: {data_dict['B']}</li>
-            <li>Key C: {data_dict['C']}</li>
-            <li>Key D: {data_dict['D']}</li>
-            <li>Key E: {data_dict['E']}</li>
+            <li>Key A: {dict1['A']}</li>
+            <li>Key B: {dict1['B']}</li>
+            <li>Key C: {dict1['C']}</li>
+            <li>Key D: {dict1['D']}</li>
+            <li>Key E: {dict1['E']}</li>
         </ul>
     """
     return HttpResponse(nav + "<h1>Page 3</h1><h2>Dictionary</h2>" + body)
+
+
+
 
 # Create your views here.
